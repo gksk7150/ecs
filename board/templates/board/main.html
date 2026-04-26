@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변경관리 시스템</title>
+</head>
+<body>
+
+    <h1>Engineering Comunication System</h1>
+
+    <div style="display: flex;">
+
+        <!-- 좌측 메뉴 -->
+        <div style="width: 250px; border-right: 1px solid #ccc; padding: 20px;">
+
+            <h2>고객사 메뉴</h2>
+
+            {% for customer in customer_menus %}
+                <div style="margin-bottom: 20px;">
+
+                    <strong>{{ customer.company_name }}</strong>
+
+                    <ul>
+                        {% for sub in customer.sub_menus.all %}
+                            <li>{{ sub.menu_name }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- 우측 콘텐츠 -->
+        <div style="padding: 20px;">
+            <h2>메인 화면</h2>
+            <p>선택한 메뉴의 게시판이 여기에 표시됩니다.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
